@@ -27,26 +27,25 @@ type Apis struct {
 
 // ApiRequest represents a Kong api object for api creation.
 type ApiRequest struct {
-	UpstreamURL      string `json:"upstream_url,omitempty"`
-	StripRequestPath *bool  `json:"strip_request_path,omitempty"`
-	RequestPath      string `json:"request_path,omitempty"`
-	ID               string `json:"id,omitempty"`
-	CreatedAt        int64  `json:"created_at,omitempty"`
-	PreserveHost     bool   `json:"preserve_host,omitempty"`
-	Name             string `json:"name,omitempty"`
-	Hosts            string `json:"hosts,omitempty"`
+	UpstreamURL  string `json:"upstream_url,omitempty"`
+	StripURI     *bool  `json:"strip_uri,omitempty"`
+	Uris         string `json:"uris,omitempty"`
+	ID           string `json:"id,omitempty"`
+	PreserveHost bool   `json:"preserve_host,omitempty"`
+	Name         string `json:"name,omitempty"`
+	Hosts        string `json:"hosts,omitempty"`
 }
 
 // Api represents an existing Kong api object
 type Api struct {
-	UpstreamURL      string   `json:"upstream_url,omitempty"`
-	StripRequestPath *bool    `json:"strip_request_path,omitempty"`
-	RequestPath      string   `json:"request_path,omitempty"`
-	ID               string   `json:"id,omitempty"`
-	CreatedAt        int64    `json:"created_at,omitempty"`
-	PreserveHost     bool     `json:"preserve_host,omitempty"`
-	Name             string   `json:"name,omitempty"`
-	Hosts            []string `json:"hosts,omitempty"`
+	UpstreamURL  string   `json:"upstream_url,omitempty"`
+	StripURI     *bool    `json:"strip_uri,omitempty"`
+	Uris         []string `json:"uris,omitempty"`
+	ID           string   `json:"id,omitempty"`
+	CreatedAt    int64    `json:"created_at,omitempty"`
+	PreserveHost bool     `json:"preserve_host,omitempty"`
+	Name         string   `json:"name,omitempty"`
+	Hosts        []string `json:"hosts,omitempty"`
 }
 
 // Get queries for a single Kong api object, by name or id.
