@@ -37,13 +37,14 @@ type Client struct {
 	common service
 
 	// Services used for talking to different parts of the Kong API
-	Node      *NodeService
-	Cluster   *ClusterService
-	Apis      *ApisService
-	Upstreams *UpstreamsService
-	Targets   *TargetsService
-	Consumers *ConsumersService
-	Plugins   *PluginsService
+	Node         *NodeService
+	Cluster      *ClusterService
+	Apis         *ApisService
+	Certificates *CertificatesService
+	Upstreams    *UpstreamsService
+	Targets      *TargetsService
+	Consumers    *ConsumersService
+	Plugins      *PluginsService
 }
 
 // Each service representing a Kong resource type will be of this type
@@ -104,6 +105,9 @@ func NewClient(httpClient *http.Client, baseURLStr string) (*Client, error) {
 	c.Apis = &ApisService{
 		service: &c.common,
 		Plugins: (*ApisPluginsService)(&c.common),
+	}
+	c.Certificates = &CertificatesService{
+		service: &c.common,
 	}
 	c.Upstreams = &UpstreamsService{
 		service: &c.common,
