@@ -31,7 +31,7 @@ type ApiRequest struct {
 	StripURI     *bool  `json:"strip_uri,omitempty"`
 	Uris         string `json:"uris,omitempty"`
 	ID           string `json:"id,omitempty"`
-	PreserveHost bool   `json:"preserve_host,omitempty"`
+	PreserveHost *bool   `json:"preserve_host,omitempty"`
 	Name         string `json:"name,omitempty"`
 	Hosts        string `json:"hosts,omitempty"`
 }
@@ -43,7 +43,7 @@ type Api struct {
 	Uris         []string `json:"uris,omitempty"`
 	ID           string   `json:"id,omitempty"`
 	CreatedAt    int64    `json:"created_at,omitempty"`
-	PreserveHost bool     `json:"preserve_host,omitempty"`
+	PreserveHost *bool     `json:"preserve_host,omitempty"`
 	Name         string   `json:"name,omitempty"`
 	Hosts        []string `json:"hosts,omitempty"`
 }
